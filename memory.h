@@ -12,10 +12,12 @@ struct Settings {
 class Memory {
 
   private:
-    void writeByte(unsigned int address, byte data);
-    byte readByte(unsigned int address);
+   
+    boolean checkError(byte endTransmission);
 
   public:
+   void writeByte(unsigned int address, byte data);
+    byte readByte(unsigned int address);
     Settings retrieveSettings();
     void writeSettings(Settings settings);
 };

@@ -4,7 +4,8 @@
 #include <Arduino.h>
 
 class Display {
-
+  
+    
   public:
     void init();
     void setMuted(boolean muted);

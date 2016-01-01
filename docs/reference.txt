@@ -1,0 +1,4 @@
+reference:
+--------------------
+http://diyaudio.pl/showthread.php/25577-2-kana%C5%82owy-preamp-na-PGA2320
+http://malinowo.net.pl/raspberry-pi-ekspander-mcp23017-czyli-sposob-na-128-dodatkowych-gpio/

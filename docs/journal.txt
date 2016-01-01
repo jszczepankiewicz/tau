@@ -1,0 +1,30 @@
+2016-01-01
+Expander is working in write only mode :) diodes are highlighted. Interesting option found today is that gcc supports binary literals:
+controls.setLeds(0b10101010);
+I changed my mind to how I want to control pre I need to restructure proto board and finally I will back to concept of:
+- 2x16 display to show volume / source / muted etc. 
+- two encoders: source / volume
+- 3 buttons (mute, setup, aux out)
+- two diodes (setup, mute, aux out)
+
+I need now:
+- reorganize code to reflect changes
+- reorganize protype board to reflect changes
+
+Then:
+- create interface (out) + test on expander
+- add support for read mode (for buttons)
+- add support for encoders
+
+2015-12-30 
+After failure to validate connection to I/O expander (i2c) and access to memory on old chip i replaced that with new one and unplugged expander to isolate problem. Additionally I added veryfiying reply from slaves. It is little bit shame that Arduino does not promote explicitely using that response code saving a lot of hours for some inexperienced (like me). After digging for about one hour I fixed the prblem with i2c. Issues found:
+
+- after some refactoring I had to omit explicit attaching to I2C bus as master using Wire.begin().
+- I observed that just writing and immediate reading from eeprom does not work without delay in between (slave return NACK). Adding additional delay after write solved the problem. THis is weird. I assume Arduino does not wait to confirm flushing i2c buffer thus these problems.
+
+I hope above problems solving i2c eeprom will also solve expander problem.
+
+Next step:
+- add expander and test connectivity in write mode (setting out port in expander to light led without using interruptions)
+- use expander in interrupt mode 
+if any problems occured disengage i2c eeeprom from bus and start again tests with expander without that.

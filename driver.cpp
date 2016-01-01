@@ -4,7 +4,7 @@
 Driver::Driver(Display display, Memory memory): display(display),memory(memory) {}
 
 void Driver::init(){
-  
+  Serial.println("Driver initialized.");
 }
 
 void Driver::switchToInput0() {

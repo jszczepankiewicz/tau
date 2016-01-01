@@ -1,0 +1,32 @@
+Target concept - UI:
+================
+Controls:
+----------------
+- two encoders: one for input selection, second for volume 
+- button: mute
+- button: setup
+- button: aux out
+
+Display:
+----------------
+- one LED 2x20 with some common driver (https://sklep.avt.pl/wyswietlacz-lcd-2x20-diw-w-k-e6-pbf.html)
+- one LED headphones
+
+Remote Controller:
+----------------
+- RC5 based
+- all controls will be reproduced on remote controller
+
+Input Channels:
+----------------
+- 5 channels on bistable relays (connected through i2c)
+
+Headphones support:
+----------------
+- tpa6120a2 reference implementation
+- switching by internal relays (output will be 
+
+Similar UI:
+================
+- McIntosh i.e. http://www.mcintoshlabs.com/us/Products/pages/ProductDetails.aspx?CatId=preamplifiers&ProductId=C1100
+- Mark Levinson No.326S

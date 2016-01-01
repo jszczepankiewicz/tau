@@ -8,10 +8,13 @@ class Controls {
 
   private:
     Driver driver;
-    void setLeds(byte data);
+    
     byte getInputs();
+    boolean checkError(byte data);
 
   public:
+    //  move to private after testing
+    void setLeds(byte data);
     Controls(Driver driver);
     void init();
     // to be changed to interrupts in future
